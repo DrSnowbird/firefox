@@ -1,0 +1,13 @@
+version: '3' 
+services:
+  docker-firefox:
+    image: openkbs/firefox
+    build:
+      context: ./Dockerfile
+    container_name: docker-firefox
+    environment:
+      - USER_ID=${USER_ID:-1100}
+      - GROUP_ID=${GROUP_ID:-1100}
+    env_file:
+      - ./docker.env
+
