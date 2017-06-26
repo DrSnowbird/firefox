@@ -6,7 +6,11 @@ RUN apt-get update && \
     apt-get install -y firefox
 
 ARG USER_ID=${USER_ID:-1100}
-ENV GROUP_ID=${GROUP_ID:-1100}
+ARG GROUP_ID=${GROUP_ID:-1100}
+
+ENV USER_ID=${USER_ID}
+ENV GROUP_ID=${GROUP_ID}
+
 RUN export uid=${USER_ID} gid=${GROUP_ID} && \
     mkdir -p /home/developer && \
     mkdir -p /etc/sudoers.d && \
