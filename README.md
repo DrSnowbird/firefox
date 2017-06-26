@@ -2,7 +2,7 @@
 
 Docker-based Firefox using X11 socket to display Web GUI
 
-## Requirements
+## Run (using default uid:gid as 1000:1000)
 
 ```sh
 docker run -ti --rm \
@@ -13,7 +13,7 @@ docker run -ti --rm \
     openkbs/firefox
 ```
 
-## Help! I started the container
+## Run (using different uid:gid)
 
 You might have an issue with the X11 socket permissions since the default user
 used by the base image has an user and group ids set to `1000`.
