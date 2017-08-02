@@ -30,9 +30,9 @@ imageTag=${1:-"openkbs/firefox"}
 PACKAGE=`echo ${imageTag##*/}|tr "/\-: " "_"`
 #version=cpu
 
-docker_volume_data1=/data
+docker_volume_data1=/.firefox
 
-local_docker_data1=${baseDataFolder}/${PACKAGE}/data
+local_docker_data1=${baseDataFolder}/${PACKAGE}/.firefox
 
 #### ---- local data folders on the host ----
 #mkdir -p ${local_docker_data1}

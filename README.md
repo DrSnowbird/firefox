@@ -1,4 +1,4 @@
-# docker-netbeans
+# Firefox-docker
 
 Docker-based Firefox using X11 socket to display Web GUI
 
@@ -8,8 +8,6 @@ Docker-based Firefox using X11 socket to display Web GUI
 docker run -ti --rm \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v `pwd`/.netbeans-docker:/home/developer/.netbeans \
-    -v `pwd`:/workspace \
     openkbs/firefox
 ```
 
@@ -23,9 +21,6 @@ docker run -ti --rm \
     -e DISPLAY=$DISPLAY \
     -e USER_ID=1001 \
     -e GROUP_ID=1001 \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v `pwd`/.netbeans-docker:/home/developer/.netbeans \
-    -v `pwd`:/workspace \
     openkbs/firefox
 ```
 
