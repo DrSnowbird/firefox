@@ -13,3 +13,4 @@ services:
       - ./docker.env
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/data-docker/firefox/data:/home/developer/data

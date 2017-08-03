@@ -31,11 +31,14 @@ PACKAGE=`echo ${imageTag##*/}|tr "/\-: " "_"`
 #version=cpu
 
 docker_volume_data1=/.firefox
+docker_volume_data2=/home/developer/data
 
 local_docker_data1=${baseDataFolder}/${PACKAGE}/.firefox
+local_docker_data2=${baseDataFolder}/${PACKAGE}/data
 
 #### ---- local data folders on the host ----
-#mkdir -p ${local_docker_data1}
+mkdir -p ${local_docker_data1}
+mkdir -p ${local_docker_data2}
 
 #### ---- ports mapping ----
 docker_port1=
@@ -60,6 +63,8 @@ echo "---------------------------------------------"
 docker run -ti --rm \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ${local_docker_data1}:${docker_volume_data1} \
+    -v ${local_docker_data2}:${docker_volume_data2} \
     --name=${instanceName} \
     ${imageTag}
     

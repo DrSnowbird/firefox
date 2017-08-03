@@ -21,5 +21,6 @@ RUN export uid=${USER_ID} gid=${GROUP_ID} && \
     chown developer:developer -R /home/developer
        
 USER developer
+VOLUME /home/developer/data
 ENV HOME /home/developer
 CMD /usr/bin/firefox
